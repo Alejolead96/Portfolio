@@ -28,6 +28,7 @@ const useTheme = () => {
 
   return {
     toggleTheme,
+    theme,
   };
 };
 

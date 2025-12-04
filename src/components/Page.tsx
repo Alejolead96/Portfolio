@@ -1,26 +1,72 @@
+import { useState } from "react";
+import { IconSun, IconMoon } from "@tabler/icons-react";
 import useTheme from "../hooks/useTheme";
+import About from "./About";
+import Resume from "./Resume";
+import Portfolio from "./Portfolio";
+import Contact from "./Contact";
+import ParentPages from "./ParentPages";
 
 const Page = () => {
-  const { toggleTheme } = useTheme();
+  const { toggleTheme, theme } = useTheme();
+  const [activePage, setActivePage] = useState(0);
+
   return (
-    <div className="basis-8/12 dark:bg-secondary-dark border dark:border-primary-border-dark rounded-md ">
-      <button onClick={toggleTheme}>Icon Change theme</button>
-      <div className="flex gap-4">
-        <button>About</button>
-        <button>Resume</button>
-        <button>Portfolio</button>
-        <button>Contact</button>
+    <div className="w-full relative border bg-blue-100/20 border-gray-300 dark:border-primary-border-dark dark:bg-secondary-dark rounded-md ">
+      <button
+        className="absolute top-[-20px] right-[-20px] p-3 rounded-md bg-gray-100 border border-gray-300 text-blue-400 dark:bg-third-dark dark:border-primary-border-dark text-xl"
+        onClick={toggleTheme}
+      >
+        {theme === "dark" ? <IconSun /> : <IconMoon />}
+      </button>
+      <div className="flex gap-6 p-6 border-b border-b-gray-300 dark:border-primary-border-dark">
+        <button
+          className={`px-4 py-2 rounded-md ${
+            activePage === 0
+              ? "bg-blue-200/40 dark:bg-fourth-dark dark:text-primary-dark-text"
+              : "text-gray-600 dark:text-secondary-dark-text"
+          }`}
+          onClick={() => setActivePage(0)}
+        >
+          About
+        </button>
+        <button
+          className={`px-4 py-2 rounded-md ${
+            activePage === 1
+              ? "bg-blue-200/40 dark:bg-fourth-dark dark:text-primary-dark-text"
+              : "text-gray-600 dark:text-secondary-dark-text"
+          }`}
+          onClick={() => setActivePage(1)}
+        >
+          Resume
+        </button>
+        <button
+          className={`px-4 py-2 rounded-md ${
+            activePage === 2
+              ? "bg-blue-200/40 dark:bg-fourth-dark dark:text-primary-dark-text"
+              : "text-gray-600 dark:text-secondary-dark-text"
+          }`}
+          onClick={() => setActivePage(2)}
+        >
+          Portfolio
+        </button>
+        <button
+          className={`px-4 py-2 rounded-md ${
+            activePage === 3
+              ? "bg-blue-200/40 dark:bg-fourth-dark dark:text-primary-dark-text"
+              : "text-gray-600 dark:text-secondary-dark-text"
+          }`}
+          onClick={() => setActivePage(3)}
+        >
+          Contact
+        </button>
       </div>
-      <div>
-        <h2>About Me</h2>
-        <p>
-          I'm a Full-Stack Developer from San Francisco, California,
-          specializing in web development and creating innovative digital
-          solutions. I enjoy turning complex problems into simple, beautiful and
-          intuitive applications.
-        </p>
-        <h2>What I'm Doing</h2>
-      </div>
+      <ParentPages activePage={activePage}>
+        <About key="About" />
+        <Resume key="Resume" />
+        <Portfolio key="Portfolio" />
+        <Contact key="Contact" />
+      </ParentPages>
     </div>
   );
 };

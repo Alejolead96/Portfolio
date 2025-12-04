@@ -6,9 +6,16 @@
   --color-primary-dark: #1d2127;
   --color-secondary-dark: #22262c;
   --color-third-dark: #2e333b;
+  --color-fourth-dark: #1a374e;
+  --color-primary-dark-text: #ffffff;
+  --color-secondary-dark-text: #727e80;
   --color-primary-border-dark: #303030;
   --color-primary-light: #ffffff;
   --color-secondary-light: #ffffff;
+}
+
+html {
+  font-family: "Rubik", sans-serif;
 }
 
 button {
