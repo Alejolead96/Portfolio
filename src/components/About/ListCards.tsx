@@ -42,9 +42,12 @@ const ListCards = () => {
 
   return (
     <div className="grid grid-cols-2 gap-4">
-      {listCards.map((card, index) => (
-        <div className="flex gap-4 p-6 rounded-md dark:bg-third-dark ">
-          <p className="basis-1/6 text-blue-500">{card.icon}</p>
+      {listCards.map((card) => (
+        <div
+          key={card.title}
+          className="flex gap-4 p-6 rounded-md dark:bg-third-dark "
+        >
+          <p className="basis-1/6 text-sky-500">{card.icon}</p>
           <div className="basis-5/6 flex flex-col gap-2">
             <h1 className="text-lg font-semibold">{card.title}</h1>
             <p className="dark:text-secondary-dark-text">{card.description}</p>

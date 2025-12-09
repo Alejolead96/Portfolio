@@ -23,7 +23,7 @@ const Profile = () => {
     <div className="flex flex-col justify-center gap-6 py-6 border-b border-gray-300 dark:border-b-primary-border-dark">
       {contactInfo.map((item) => (
         <div key={item.label} className="flex gap-3">
-          <p className="flex items-center justify-center text-blue-400 bg-gray-200/60 dark:bg-third-dark p-2 rounded-md">
+          <p className="flex items-center justify-center text-sky-500 bg-gray-200/60 dark:bg-third-dark p-2 rounded-md">
             {item.icon}
           </p>
           <div className="flex flex-col gap-1">

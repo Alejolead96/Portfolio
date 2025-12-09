@@ -1,10 +1,11 @@
 import ListCards from "./ListCards";
+import TechnologiesCards from "./TechnologiesCards";
 
 const About = () => {
   return (
     <div className="flex flex-col gap-4">
       <h2 className="text-3xl font-bold">About Me</h2>
-      <div className="h-1 w-12 bg-blue-500 rounded-md"></div>
+      <div className="h-1 w-12 bg-sky-500 rounded-md"></div>
       <p className="text-gray-500 dark:text-secondary-dark-text">
         I'm a Full-Stack Developer from San Francisco, California, specializing
         in web development and creating innovative digital solutions. I enjoy
@@ -21,6 +22,11 @@ const About = () => {
       </p>
       <h2 className="text-3xl font-bold">What I'm Doing</h2>
       <ListCards />
+      <h1 className="text-3xl font-bold mt-6">Technologies</h1>
+
+      <TechnologiesCards />
+
+      <h1 className="text-3xl font-bold mt-6">Certifications</h1>
     </div>
   );
 };

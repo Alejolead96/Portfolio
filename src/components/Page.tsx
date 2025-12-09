@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { IconSun, IconMoon } from "@tabler/icons-react";
 import useTheme from "../hooks/useTheme";
-import About from "./About";
-import Resume from "./Resume";
+import About from "./About/About";
+import Resume from "./Resume/Resume";
 import Portfolio from "./Portfolio";
 import Contact from "./Contact";
 import ParentPages from "./ParentPages";
