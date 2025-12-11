@@ -1,4 +1,4 @@
-import { IconBook } from "@tabler/icons-react";
+import { IconBook, IconBriefcase2 } from "@tabler/icons-react";
 import Information from "./Information";
 
 const Resume = () => {
@@ -23,7 +23,7 @@ const Resume = () => {
 
   const experience = {
     title: "Experience",
-    icon: <IconBook size={35} />,
+    icon: <IconBriefcase2 size={35} />,
     content: [
       {
         title: "Freelance Software Developer",
