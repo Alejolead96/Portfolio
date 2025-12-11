@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { IconSun, IconMoon } from "@tabler/icons-react";
 import useTheme from "../hooks/useTheme";
-import About from "./About/About";
-import Resume from "./Resume/Resume";
+import About from "./About";
+import Resume from "./Resume";
 import Portfolio from "./Portfolio";
 import Contact from "./Contact";
 import ParentPages from "./ParentPages";
@@ -12,7 +12,7 @@ const Page = () => {
   const [activePage, setActivePage] = useState(0);
 
   return (
-    <div className="w-full relative border bg-blue-100/20 border-gray-300 dark:border-primary-border-dark dark:bg-secondary-dark rounded-md ">
+    <div className="w-full relative border bg-sky-100/10 border-gray-300 dark:border-primary-border-dark dark:bg-secondary-dark rounded-md ">
       <button
         className="absolute top-[-20px] right-[-20px] p-3 rounded-md bg-gray-100 border border-gray-300 text-blue-400 dark:bg-third-dark dark:border-primary-border-dark text-xl"
         onClick={toggleTheme}
@@ -28,7 +28,7 @@ const Page = () => {
           }`}
           onClick={() => setActivePage(0)}
         >
-          About
+          Sobre mí
         </button>
         <button
           className={`px-4 py-2 rounded-md ${
@@ -38,7 +38,7 @@ const Page = () => {
           }`}
           onClick={() => setActivePage(1)}
         >
-          Resume
+          Resumen
         </button>
         <button
           className={`px-4 py-2 rounded-md ${
@@ -48,7 +48,7 @@ const Page = () => {
           }`}
           onClick={() => setActivePage(2)}
         >
-          Portfolio
+          Portafolio
         </button>
         <button
           className={`px-4 py-2 rounded-md ${
@@ -58,7 +58,7 @@ const Page = () => {
           }`}
           onClick={() => setActivePage(3)}
         >
-          Contact
+          Contacto
         </button>
       </div>
       <ParentPages activePage={activePage}>

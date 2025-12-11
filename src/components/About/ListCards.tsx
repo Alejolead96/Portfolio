@@ -10,50 +10,55 @@ const ListCards = () => {
   const listCards = [
     {
       icon: <IconDeviceDesktopPause size={40} />,
-      title: "Frontend Development",
+      title: "Desarrollo Frontend",
       description:
-        "Building modern SPAs with React, Next.js, Vue.js, TypeScript, and state management using Redux, Zustand. Expertise in SSR, SSG, and ISR patterns.",
+        "Desarrollo de interfaces modernas con React y Next.js, aplicando patrones reutilizables, manejo avanzado de estado y estrategias de renderizado para lograr experiencias rápidas, estables y escalables.",
     },
     {
       icon: <IconAppWindow size={40} />,
-      title: "Backend Development",
+      title: "Desarrollo Backend",
       description:
-        "Creating scalable APIs with Node.js, Python (FastAPI, Django), Go, and Java Spring Boot. RESTful and GraphQL services with PostgreSQL, MongoDB, Redis.",
+        "Construcción de servicios backend con NestJS, TypeORM, PostgreSQL y MongoDB, utilizando arquitectura modular, principios SOLID y diseño de APIs consistentes orientadas a desempeño y mantenibilidad.",
     },
     {
       icon: <IconCloud size={40} />,
       title: "Cloud & DevOps",
       description:
-        "Deploying on AWS (Lambda, ECS, S3), Azure, GCP. Infrastructure as Code with Terraform, CI/CD pipelines, Docker, Kubernetes orchestration.",
+        "Despliegue de aplicaciones en AWS con EC2, Lambda, S3 y RDS, utilizando Docker, configuración de entornos, prácticas CI/CD y estrategias orientadas a disponibilidad, seguridad y escalabilidad.",
     },
     {
       icon: <IconSitemap size={40} />,
-      title: "Microservices Architecture",
+      title: "Arquitectura de Microservicios",
       description:
-        "Designing distributed systems with API Gateway, message queues (RabbitMQ, Kafka), service mesh, event-driven architecture, and gRPC communication.",
+        "Diseño de sistemas distribuidos con API Gateways, colas de mensajería, eventos y gRPC. Organización por dominios, servicios independientes y comunicación eficiente para garantizar resiliencia y escalabilidad.",
     },
     {
       icon: <IconDatabase size={40} />,
-      title: "Database & Storage",
+      title: "Bases de Datos & Almacenamiento",
       description:
-        "Expertise in SQL (PostgreSQL, MySQL), NoSQL (MongoDB, DynamoDB), caching strategies (Redis, Memcached), and database optimization.",
+        "Manejo de PostgreSQL y MongoDB mediante modelos optimizados, índices, consultas eficientes y caching con Redis, asegurando integridad, rendimiento y soporte para cargas de datos crecientes.",
     },
   ];
 
   return (
-    <div className="grid grid-cols-2 gap-4">
-      {listCards.map((card) => (
-        <div
-          key={card.title}
-          className="flex gap-4 p-6 rounded-md dark:bg-third-dark "
-        >
-          <p className="basis-1/6 text-sky-500">{card.icon}</p>
-          <div className="basis-5/6 flex flex-col gap-2">
-            <h1 className="text-lg font-semibold">{card.title}</h1>
-            <p className="dark:text-secondary-dark-text">{card.description}</p>
+    <div className="mt-6 flex flex-col gap-6">
+      <h2 className="text-3xl font-bold">¿Qué hago?</h2>
+      <div className="grid grid-cols-2 gap-4">
+        {listCards.map((card) => (
+          <div
+            key={card.title}
+            className="flex gap-4 p-6 rounded-md bg-sky-100/20 dark:bg-third-dark border border-gray-300/90 dark:border-gray-800/90 hover:border-sky-500"
+          >
+            <p className="basis-1/6 text-sky-500">{card.icon}</p>
+            <div className="basis-5/6 flex flex-col gap-2">
+              <h1 className="text-xl font-semibold">{card.title}</h1>
+              <p className="text-[15px] text-gray-600 dark:text-secondary-dark-text">
+                {card.description}
+              </p>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

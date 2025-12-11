@@ -11,63 +11,60 @@ import {
 const TechnologiesCards = () => {
   const technologies = [
     {
-      name: "Languages",
-      description:
-        "JavaScript, TypeScript, Python, Go, Java, Swift, Kotlin, SQL",
+      name: "Lenguajes",
+      description: "JavaScript, TypeScript, Python, Java, SQL",
       icon: <IconCode size={30} />,
     },
     {
-      name: "Frontend Frameworks",
-      description:
-        "React, Next.js, Vue.js, Angular, Svelte, Tailwind CSS, Material-UI",
+      name: "Frontend",
+      description: "React, Next.js, Tailwind CSS",
       icon: <IconTableRow size={30} />,
     },
     {
-      name: "Backend & APIs",
-      description:
-        "Node.js, Express, NestJS, FastAPI, Django, Spring Boot, GraphQL",
+      name: "Backend y APIs",
+      description: "Node.js, Express, NestJS, Spring Boot, gRPC",
       icon: <IconServer size={30} />,
     },
     {
-      name: "Cloud Platforms",
-      description:
-        "AWS (Lambda, ECS, S3, RDS), Azure, Google Cloud Platform, Vercel, Netlify",
+      name: "Nube",
+      description: "AWS, Vercel, Google Cloud",
       icon: <IconCloud size={30} />,
     },
     {
-      name: "Databases",
-      description:
-        "PostgreSQL, MySQL, MongoDB, Redis, DynamoDB, Elasticsearch, Cassandra",
+      name: "Bases de Datos",
+      description: "PostgreSQL, MySQL, MongoDB, Redis",
       icon: <IconDatabase size={30} />,
     },
     {
-      name: "DevOps & Tools",
-      description:
-        "Docker, Kubernetes, Terraform, Jenkins, GitHub Actions, GitLab CI, Prometheus",
+      name: "DevOps y Herramientas",
+      description: "Docker, Git, GitHub, Kubernetes",
       icon: <IconSettings size={30} />,
     },
     {
-      name: "Message Queues",
-      description: "Apache Kafka, RabbitMQ, AWS SQS, Redis Pub/Sub, NATS",
+      name: "Microservicios",
+      description: "Kafka, RabbitMQ, Gateways, Colas, Socket.io",
       icon: <IconSitemap size={30} />,
     },
   ];
 
   return (
-    <div className="flex flex-col gap-6 justify-center">
-      {technologies.map((technology) => (
-        <div key={technology.name} className="flex gap-4">
-          <p className="flex items-center justify-center p-4 rounded-md dark:bg-sky-600/10 dark:text-sky-500">
-            {technology.icon}
-          </p>
-          <div className="flex flex-col gap-1">
-            <h2 className="text-lg font-bold">{technology.name}</h2>
-            <p className="dark:text-secondary-dark-text">
-              {technology.description}
+    <div className="mt-4 flex flex-col gap-6">
+      <h1 className="text-3xl font-bold mt-6">Tecnologias</h1>
+      <div className="flex flex-col gap-6 justify-center">
+        {technologies.map((technology) => (
+          <div key={technology.name} className="flex gap-4">
+            <p className="flex items-center justify-center p-3 rounded-md bg-sky-100 text-sky-600 dark:bg-sky-600/10 dark:text-sky-500">
+              {technology.icon}
             </p>
+            <div className="flex flex-col gap-1">
+              <h2 className="text-xl font-medium">{technology.name}</h2>
+              <p className="text-gray-600 dark:text-secondary-dark-text">
+                {technology.description}
+              </p>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
